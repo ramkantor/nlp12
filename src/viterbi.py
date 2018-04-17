@@ -56,5 +56,5 @@ def viterbi(obs, states, start_p, trans_p, emit_p, end_p, corpus):
         opt.insert(0, V[t + 1][previous]["prev"])
         previous = V[t + 1][previous]["prev"]
 
-    print 'The steps of states are ' + ' '.join(opt) + ' with highest probability of %s' % max_prob
+    #print 'The steps of states are ' + ' '.join(opt) + ' with highest probability of %s' % max_prob
     return zip(obs, opt)
