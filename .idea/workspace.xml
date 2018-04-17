@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9fc9f55-022d-472d-8b15-4d4be104ffca" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/accuracy.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/heb-pos.gold" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/heb-pos.test" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/heb-pos.train" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/segmentTag.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/task1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/task2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/task3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/viterbi.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/heb-pos.gram" afterPath="$PROJECT_DIR$/files/heb-pos.gram" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/viterbi.tagged" afterPath="$PROJECT_DIR$/files/viterbi.tagged" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/maman12.docx" />
     </list>
     <ignored path="maman12.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -274,6 +263,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maman12" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maman12" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -285,13 +288,14 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\shira\maman12" />
-      <recent name="C:\Users\shira\maman12\files" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shira\maman12\exps" />
       <recent name="C:\Users\shira\maman12\src" />
+      <recent name="C:\Users\shira\maman12" />
+      <recent name="C:\Users\shira\maman12\files" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shira\maman12\doc" />
       <recent name="C:\Users\shira\maman12" />
       <recent name="C:\Users\shira\maman12\files" />
     </key>
