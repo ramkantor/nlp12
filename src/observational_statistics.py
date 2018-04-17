@@ -40,11 +40,11 @@ def num_of_segments_types(file):
 
 print "gold"
 
-calc_num_of_unigrams('files/heb-pos.gold')
-num_of_unigram_types('files/heb-pos.gold')
-num_of_segments_types('files/heb-pos.gold')
+calc_num_of_unigrams('../heb-pos.gold')
+num_of_unigram_types('../heb-pos.gold')
+num_of_segments_types('../heb-pos.gold')
 
 print "train"
-calc_num_of_unigrams('files/heb-pos.train')
-num_of_unigram_types('files/heb-pos.train')
-num_of_segments_types('files/heb-pos.train')
+calc_num_of_unigrams('../heb-pos.train')
+num_of_unigram_types('../heb-pos.train')
+num_of_segments_types('../heb-pos.train')

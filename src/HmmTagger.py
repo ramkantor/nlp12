@@ -52,7 +52,7 @@ class HMMTagger:
             sm='y'
         else:
             sm='n'
-        with open('exps/hmm-smooth-'+sm+'.lex', 'w+') as lex:
+        with open('exps/hmm-part-smooth-'+sm+'.lex', 'w+') as lex:
 
             for key, value in dicSeg.iteritems():
                 lex.write(key + '\t')
@@ -102,13 +102,14 @@ class HMMTagger:
                         dic_tag[tuple.tag] = 1
 
         num_of_tags = sum(dic_tag.values())
+        print 'num of types of tags '+str(len(dic_tag))
 
 
         if smoothing:
             sm = 'y'
         else:
             sm = 'n'
-        with open('exps/hmm-smooth-'+sm+'.gram', 'w+') as gram:
+        with open('exps/hmm-part-smooth-'+sm+'.gram', 'w+') as gram:
             gram.write("\n\\1-grams\\\n")
             for key, value in dic_tag.iteritems():
                 gram.write("%.9f" % math.log(float(value) / num_of_tags) + '\t' + key + '\n')

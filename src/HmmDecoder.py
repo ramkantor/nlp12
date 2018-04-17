@@ -64,7 +64,7 @@ def preprocess_and_run_viterbi(test_file,param_file_1,param_file_2):
 
 
 
-    with open('results/hmm-smooth-y.tagged', 'w+') as tagfile:
+    with open('results/hmm.tagged', 'w+') as tagfile:
         for line in tagged:
             for word in line:
                 seg, pos = word
@@ -75,3 +75,4 @@ def preprocess_and_run_viterbi(test_file,param_file_1,param_file_2):
 def decode(test_file, param_file_1, param_file_2):
     preprocess_and_run_viterbi(test_file, param_file_1, param_file_2)
     print 'finished hmm tagger decoding'
+    print 'output: results/hmm.tagged '

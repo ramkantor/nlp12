@@ -3,7 +3,7 @@ import src.BasicTagger
 import src.HmmDecoder
 
 
-def run(model, test_file, param_file_, param_file_2):
+def run(model, test_file, param_file_1, param_file_2):
     print model
     methods = {
         '1': src.BasicTagger.decode,
