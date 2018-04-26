@@ -19,6 +19,7 @@ if __name__ == "__main__":
     smoothing = sys.argv[3]
     smooth={'y':True, 'n':False}[smoothing]
     run(model, file, smooth)
+    
     """
     run(model, file, smoothing == 'y')
     """
