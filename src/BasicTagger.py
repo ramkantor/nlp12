@@ -5,11 +5,17 @@ from segmentTag import segmentTag
 
 
 class BasicTagger:
+"""
+WHY SO MUCH SPACEEEEE
+"""
 
 
 
     def training(self, file_):
         dic = {}
+"""
+"dic" is ambiguous (and rude ;))
+"""
         tags = {}
         mostCommonTag = {}
 
@@ -24,6 +30,10 @@ class BasicTagger:
                             dic[seg.segment][seg.tag] = 1
                     else:
                         dic[seg.segment] = {seg.tag: 1}
+"""
+This line can be instead of lines 26 - 32:
+dic[seg.segment].update({seg.tag: dic[seg.segment].get(seg.tag, 0) + 1}) if seg.segment in dic else dic.update({seg.segment: {seg.tag: 1}})  
+"""
             for seg in dic:
                 mostCommonTag[seg] = max(dic[seg].iteritems(), key=operator.itemgetter(1))[0]
         with open('exps/basic.lex', 'w+') as lex:
