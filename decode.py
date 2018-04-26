@@ -14,6 +14,8 @@ def run(model, test_file, param_file_1, param_file_2):
 Something more understandable than '1', '2'.
 You can have a "methods" dictionary in a separate file. This way it won't be computed every time you apply "run", even though
 it's done only once. But the idea of a model(/methods) dict' is correct, and would have fit even more if there were more than 2 models.
+Otherwise it can also be:
+(src.BasicTagger.decode if model == '1' else src.HmmDecoder.decode)(test_file, param_file_1, param_file_2)
 """
 
     methods[model](test_file, param_file_1, param_file_2)
