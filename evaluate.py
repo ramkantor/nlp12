@@ -1,5 +1,8 @@
 import sys
 import src.accuracy
+"""
+You can also do: "from src.accuracy import eval"
+"""
 
 
 def run(tagged_file, gold_file, model, smoothing):
