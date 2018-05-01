@@ -4,23 +4,41 @@ import viterbi
 
 def preprocess_and_run_viterbi(test_file,param_file_1,param_file_2):
     global line, seg, tagged
+"""
+Usually try to avoid using global params
+"""
     start_p = {}
     trans_p = {}
     states = []
     emit_p = {}
     end_p = {}
+"""
+Can also be: start_p, trans_p = {}, {}
+"""
     lines = open(param_file_2).read().split('\n\n')
     lines = lines[1].split('\n')
+"""
+lines = open(param_file_2).read().split('\n\n')[1].split('\n')
+"""
 
     for line in lines:
 
         if line.strip() != '\\2-grams\\' and line != '':
+"""
+The first rule of "line.strip() != '\\2-grams\\'" is enough
+"""
             splited = line.strip().split('\t')
             prob = splited[0]
             pos1 = splited[1]
             pos2 = splited[2]
+"""
+prob, pos1, pos2 = splited[0], splited[1], splited[2]
+"""
             if pos1 not in states:
                 states.append(pos1)
+"""
+states.append(pos1) if pos1 not in states else None
+"""
             if pos2 not in states:
                 states.append(pos2)
             if (pos1 == '<s>'):
@@ -32,6 +50,9 @@ def preprocess_and_run_viterbi(test_file,param_file_1,param_file_2):
                     trans_p[pos1].update({pos2: float(prob)})
                 else:
                     trans_p[pos1] = {pos2: float(prob)}
+"""
+trans_p[pos1].update({pos2: float(prob)}) if pos1 in trans_p else trans_p[pos1].update({pos2: float(prob)})
+"""
     with open(param_file_1) as lex:
         corpus = []
         for line in lex:
