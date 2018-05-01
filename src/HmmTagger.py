@@ -12,6 +12,10 @@ class HMMTagger:
         return empty
         creates a *.lex file"""
 
+"""
+No init method?
+"""
+  
     def create_lexical_file(self, trainFile, smoothing):
         dicSeg = {}
         dicTag = {}
@@ -25,6 +29,9 @@ class HMMTagger:
                         dicTag[tuple.tag] = 1
                     if dicSeg.has_key(tuple.segment):
                         if dicSeg[tuple.segment].has_key(tuple.tag):
+"""
+Don't use "has_key", just use "in" or "dict.get()"
+"""
                             dicSeg[tuple.segment][tuple.tag] += 1
                         else:
                             dicSeg[tuple.segment][tuple.tag] = 1
@@ -35,6 +42,9 @@ class HMMTagger:
                         # SMOOTHING HANDLING
             if smoothing:
                 removeList = []
+"""
+Better practice is to init the methods "global" vars at top. But this is also a style decision :)
+"""
                 dicSeg['UNK'] = {}
                 for seg, dic in dicSeg.iteritems():
                     if sum(dic.values()) == 1:
@@ -46,12 +56,18 @@ class HMMTagger:
                         removeList.append(seg)
                 for x in removeList:
                     del dicSeg[x]
+"""
+You can run on a copy of dicSeg, and make the changes in the original dicSeg
+"""
 
         # .lex file writing
         if smoothing:
             sm='y'
         else:
             sm='n'
+"""
+I see no use with "sm"
+"""
         with open('exps/hmm-part-smooth-'+sm+'.lex', 'w+') as lex:
 
             for key, value in dicSeg.iteritems():
@@ -62,10 +78,16 @@ class HMMTagger:
                 lex.write('\n')
             if not smoothing:
                 lex.write('UNK' + '\t' + 'NNP' + '\t' + "%.9f" % math.log(1) + '\t')
+"""
+This method is long. Could have splited into 2+ methods?
+"""
 
     def create_tag_lists(self, trainFile):
         listOflists = []
         list = []
+"""
+Better call this something else as  "list" is a known type
+"""
         with open(trainFile)as train:
             for line in train:
                 if line != '\n':
@@ -169,3 +191,6 @@ def train(file,smoothing):
     hmm = HMMTagger()
     hmm.create_lexical_file(file, smoothing)
     hmm.create_transition_file(file, smoothing)
+"""
+what is this func in the class file
+"""
