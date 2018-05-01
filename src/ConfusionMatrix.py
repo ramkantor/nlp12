@@ -1,4 +1,7 @@
 import numpy as py
+"""
+numpy is usually imported as np, py might be a little confusing as py stands for python
+"""
 import segmentTag
 import operator
 
@@ -6,6 +9,9 @@ import operator
 def calc_conf_matrix(gold, tagged):
     conf_matrix = {}  # py.zeros([40,40], dtype=int)
     print conf_matrix
+"""
+Useless print
+"""
 
     with open(gold) as gold:
         with open(tagged) as tagged:
@@ -26,6 +32,9 @@ def calc_conf_matrix(gold, tagged):
                         else:
                             conf_matrix[gold_tag] = {}
                             conf_matrix[gold_tag][tagged_tag] = 1
+"""
+Can be stright up: conf_matrix[gold_tag] = {tagged_tag: 1}
+"""
 
     print conf_matrix
     max_value1 = 1
@@ -36,6 +45,9 @@ def calc_conf_matrix(gold, tagged):
     max_tags3 = ()
     max_list=[1,1,1]
     max_tag_list=['a','b','c']
+"""
+These should be in a config file
+"""
 
     for tag1, tags in conf_matrix.iteritems():
         for tag2, value in tags.iteritems():
@@ -43,6 +55,9 @@ def calc_conf_matrix(gold, tagged):
                 min_element_index=max_list.index(min(max_list))
                 max_list[min_element_index]=value
                 max_tag_list[min_element_index]=(tag1,tag2)
+"""
+max_list and max_tag_list are of different lengths
+"""
 
     # print  str(max_value1) + str(max_tags1)
     # print  str(max_value2) + str(max_tags2)
@@ -52,3 +67,6 @@ def calc_conf_matrix(gold, tagged):
 
 
 calc_conf_matrix('../heb-pos.gold', '../results/hmm.tagged')
+"""
+func applicatiopn not in a main
+"""
